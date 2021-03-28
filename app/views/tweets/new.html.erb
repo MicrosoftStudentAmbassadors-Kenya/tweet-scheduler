@@ -8,6 +8,7 @@
 <%= form_with model: @tweet do |form| %>
 
     <%# Error Handling. %>
+    <%= render "partials/form_errors", form: form %>
 
 
     <div class="mb-3">
