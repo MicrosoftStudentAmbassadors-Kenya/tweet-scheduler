@@ -10,11 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_27_113511) do
+ActiveRecord::Schema.define(version: 2021_03_28_113611) do
 
   create_table "currents", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "twitter_accounts", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "name"
+    t.string "username"
+    t.string "image"
+    t.string "description"
+    t.string "token"
+    t.string "secret"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_twitter_accounts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -24,4 +37,5 @@ ActiveRecord::Schema.define(version: 2021_03_27_113511) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "twitter_accounts", "users"
 end
