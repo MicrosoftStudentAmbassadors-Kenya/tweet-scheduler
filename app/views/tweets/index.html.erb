@@ -15,6 +15,7 @@
 
 </div>
 
+<%# Error Handling %>
 <div class="mt-5">
     <% if Current.user.twitter_accounts.any? %>
        
@@ -22,4 +23,8 @@
     
         <p>No Twitter Account Connected. Try Again. </p>
     <% end %>
+</div>
+
+<div class="mt-5">
+   <%= render @tweets %>
 </div> 

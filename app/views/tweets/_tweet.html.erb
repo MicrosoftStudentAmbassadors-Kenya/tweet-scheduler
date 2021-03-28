@@ -1,0 +1,16 @@
+
+<div class="card mt-3 mb-5" style="width: 15rem;">
+    <%= image_tag tweet.twitter_account.image, class: "card-img-top" %>
+    <div class="card-body">
+        <h5 class="card-title"><%= link_to "@#{tweet.twitter_account.username}", "https://twiter.com/#{tweet.twitter_account.username}", target: :_blank %></h5>
+        <p class="card-text"><%= tweet.body %></p>
+        <% if tweet.published? %>
+            <%= link_to "View Tweet", "https://twitter.com/#{tweet.twitter_account.username}/status/#{tweet.tweet_id}", class: "btn btn-primary" %>
+        <% else %>
+            <p>Scheduled for posting at: <%= l tweet.publish_at, format: :long %> UTC</p>
+        <% end %>
+    </div>
+    <div class="card-body">
+    <%= link_to "Edit Tweet", edit_tweet_path(tweet) %>
+  </div>
+</div>
