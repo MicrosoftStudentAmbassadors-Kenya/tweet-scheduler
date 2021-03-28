@@ -5,6 +5,7 @@
 # password_conf:string (virtual)
 class User < ApplicationRecord
     has_many :twitter_accounts
+    has_many :tweets
 
     has_secure_password
 

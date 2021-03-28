@@ -1,0 +1,25 @@
+
+<div class="mt-5 d-flex align-items-center justify-content-between">
+
+    <h1>Tweets</h1>
+
+    <% if Current.user.twitter_accounts.none? %>
+        
+        <%= button_to "Connect Twitter", "/auth/twitter", method: :post, class: "btn btn-primary" %>
+
+    <% else %>
+        
+        <%= link_to "Schedule a Tweet", new_tweet_path, class: "btn btn-primary" %>
+
+    <% end %>
+
+</div>
+
+<div class="mt-5">
+    <% if Current.user.twitter_accounts.any? %>
+       
+    <% else %>
+    
+        <p>No Twitter Account Connected. Try Again. </p>
+    <% end %>
+</div> 

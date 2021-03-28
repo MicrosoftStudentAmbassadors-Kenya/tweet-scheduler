@@ -1,0 +1,35 @@
+
+<div class="mt-5 d-flex align-items-center justify-content-between">
+
+    <h1>Schedule a Tweet</h1>
+
+</div>
+
+<%= form_with model: @tweet do |form| %>
+
+    <%# Error Handling. %>
+
+
+    <div class="mb-3">
+        <%= form.label :twitter_account_id %>
+        <%= form.collection_select :twitter_account_id, Current.user.twitter_accounts, :id, :username, {}, { class: "form-control" } %>
+
+    </div>
+
+    <div class="mb-3">
+        <%= form.label :body %>
+        <%= form.text_area :body, class: "form-control", placeholder: "Tweet here..." %>
+    </div>
+
+    <div class="mb-3">
+        <%= form.label :publish_at %>
+        <div class="form-control">
+            <%= form.datetime_select :publish_at %>
+        </div>
+    </div>
+    
+    <div class="mb-3">
+        <%= form.submit "Schedule Tweet", class: "btn btn-primary" %>
+    </div>
+
+<% end %>
