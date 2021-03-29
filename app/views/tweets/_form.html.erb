@@ -1,0 +1,38 @@
+<%= form_with model: tweet do |form| %>
+
+    <%# Error Handling. %>
+    <%= render "partials/form_errors", form: form %>
+
+
+    <div class="mb-3">
+        
+        <%= form.label :twitter_account_id %>
+        <%= form.collection_select :twitter_account_id, Current.user.twitter_accounts, :id, :username, {}, { class: "form-control" } %>
+
+    </div>
+
+    <div class="mb-3">
+        <%= form.label :body %>
+        <%= form.text_area :body, class: "form-control", placeholder: "Tweet here..." %>
+    </div>
+
+    <div class="mb-3">
+        <%= form.label :publish_at %>
+        <div class="form-control">
+            <%= form.datetime_select :publish_at %>
+        </div>
+    </div>
+    
+    <%= form.button "Schedule Tweet", class: "btn btn-primary mb-3" %>
+
+
+    <div class="mt-3 mb-3">
+        <% if form.object.persisted? %>
+
+            <%= link_to "Delete Tweet", form.object, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+
+        <% end %>        
+        
+    </div>
+
+<% end %>

@@ -1,7 +1,7 @@
 
 <div class="mt-5 d-flex align-items-center justify-content-between">
 
-    <h1>Tweets</h1>
+    <h1>Tweets:</h1>
 
     <% if Current.user.twitter_accounts.none? %>
         
@@ -9,7 +9,7 @@
 
     <% else %>
         
-        <%= link_to "Schedule a Tweet", new_tweet_path, class: "btn btn-primary" %>
+        <%= link_to "Schedule a Tweet",  new_tweet_path, class: "btn btn-primary" %>
 
     <% end %>
 
@@ -22,8 +22,11 @@
     <% else %>
     
         <p>No Twitter Account Connected. Try Again. </p>
+
     <% end %>
+
 </div>
+
 
 <div class="mt-5">
    <%= render @tweets %>

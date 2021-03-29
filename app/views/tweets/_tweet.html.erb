@@ -1,16 +1,50 @@
 
-<div class="card mt-3 mb-5" style="width: 15rem;">
-    <%= image_tag tweet.twitter_account.image, class: "card-img-top" %>
-    <div class="card-body">
-        <h5 class="card-title"><%= link_to "@#{tweet.twitter_account.username}", "https://twiter.com/#{tweet.twitter_account.username}", target: :_blank %></h5>
-        <p class="card-text"><%= tweet.body %></p>
-        <% if tweet.published? %>
-            <%= link_to "View Tweet", "https://twitter.com/#{tweet.twitter_account.username}/status/#{tweet.tweet_id}", class: "btn btn-primary" %>
-        <% else %>
-            <p>Scheduled for posting at: <%= l tweet.publish_at, format: :long %> UTC</p>
-        <% end %>
+
+
+<div class="row mt-2 mb-2 row-cols-1 row-cols-md-2 g-4">
+    <div class="col">
+       <div class="card">
+            <%= image_tag tweet.twitter_account.image, class: "card-img-top", alt: tweet.twitter_account.username + " Profile Picture" %>
+    
+            <div class="card-body">
+            
+                <h5 class="card-title">
+            
+                    Twitter Handle: <%= link_to "@#{tweet.twitter_account.username}", "https://twiter.com/#{tweet.twitter_account.username}", target: :_blank %>
+            
+                </h5>
+            
+                <p class="card-text"><%= tweet.body %></p>
+
+            </div>
+
+            <div class="card-body">
+                <%= link_to "Edit Tweet", edit_tweet_path(tweet), class: "card-link" %>
+            </div>
+
+            <div class="card-footer">
+
+                <% if tweet.published? %>
+            
+                    <%= link_to "View Tweet", "https://twitter.com/#{tweet.twitter_account.username}/status/#{tweet.tweet_id}", target: :_blank, class: "btn btn-primary" %>
+        
+                <% else %>
+                
+                    <p class="card-text">
+                    
+                        <small class="text-muted">
+                    
+                            Scheduled for posting on: <%= l tweet.publish_at, format: :long %> UTC
+                    
+                        </small>
+                    
+                    </p>
+
+                <% end %>
+
+            </div>
+
+        </div>   
+
     </div>
-    <div class="card-body">
-    <%= link_to "Edit Tweet", edit_tweet_path(tweet) %>
-  </div>
 </div>
