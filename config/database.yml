@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
+  host: <%= ENV['DB']
   database: tweetScheduler_production
   username: tweetScheduler
   password: <%= ENV['TWEETSCHEDULER_DATABASE_PASSWORD'] %>
