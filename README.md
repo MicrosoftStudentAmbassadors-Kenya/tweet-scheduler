@@ -1,11 +1,19 @@
-# README
+# Tweet Scheduler
+A web application built with Ruby on Rails to help you schedule and post your tweets 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+(to add: screenshots from the application)
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
-Things you may want to cover:
+## Tech Stack
 
+**Client:** 
 * Ruby version
+```bash
+  Ruby  [version==3.0.0]
+```
+**Server:** PostgreSQL
+
+## Installation 
 
 * System dependencies
 
@@ -14,11 +22,47 @@ Things you may want to cover:
 * Database creation
 
 * Database initialization
+Clone the project
 
+```bash
+  git clone https://link-to-project
+```
+
+Go to the project directory
+
+```bash
+  cd my-project
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+## Running Tests
 * How to run the test suite
+To run tests, run the following command
+
+```bash
+  npm run test
+```
+## Deployment
+
+To deploy this project run
+
+```bash
+  npm run deploy
+```
+
+Things you may want to cover:
+
+
+
 
 * Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Authors
 
-* ...
+- [@katherinepeterson](https://www.github.com/katherinepeterson)
+
