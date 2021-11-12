@@ -1,24 +1,69 @@
-# README
+# MLSA Tweet Scheduler
+This is the proposed Tweet Scheduler Site to help MLSA Kenya schedule their tweets efficiently.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Tech Stack
 
-Things you may want to cover:
+**Client:** 
 
-* Ruby version
+**Server:** Ruby
 
-* System dependencies
 
+## Installation
 * Configuration
-
+* Ruby version
+* System dependencies
 * Database creation
-
 * Database initialization
-
-* How to run the test suite
-
 * Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+# Run Locally
 
-* ...
+Clone the project
+
+```bash
+  git clone https://link-to-project
+```
+
+Go to the project directory
+
+```bash
+  cd my-project
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
+## Running Tests
+
+To run tests, run the following command
+
+```bash
+  npm run test
+```
+
+## Deployment
+
+To deploy this project run
+
+```bash
+  npm run deploy
+```
+
+## Contributing
+
+Contributions are always welcome!
+Pull requests are welcome, ensure you open an issue first to discuss on any changes you'd like to make!
+Please adhere to this project's `code of conduct`.
+
+## Licence
+
+
